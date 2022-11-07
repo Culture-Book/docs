@@ -1,0 +1,326 @@
+﻿@article{RN6,
+   author = {Ahmad, Yahaya},
+   title = {The Scope and Definitions of Heritage: From Tangible to Intangible},
+   journal = {International Journal of Heritage Studies},
+   volume = {12},
+   number = {3},
+   pages = {292-300},
+   ISSN = {1352-7258},
+   DOI = {10.1080/13527250600604639},
+   url = {https://doi.org/10.1080/13527250600604639},
+   year = {2006},
+   type = {Journal Article}
+}
+
+@inbook{RN11,
+   author = {Alivizatou-Barakou, Marilena and Kitsikidis, Alexandros and Tsalakanidou, Filareti and Dimitropoulos, Kosmas and Giannis, Chantas and Nikolopoulos, Spiros and Al Kork, Samer and Denby, Bruce and Buchman, Lise and Adda-Decker, Martine and Pillot-Loiseau, Claire and Tillmane, Joëlle and Dupont, S. and Picart, Benjamin and Pozzi, Francesca and Ott, Michela and Erdal, Yilmaz and Charisis, Vasileios and Hadjidimitriou, Stelios and Hadjileontiadis, Leontios and Cotescu, Marius and Volioti, Christina and Manitsaris, Athanasios and Manitsaris, Sotiris and Grammalidis, Nikos},
+   title = {Intangible Cultural Heritage and New Technologies: Challenges and Opportunities for Cultural Preservation and Development},
+   booktitle = {Mixed Reality and Gamification for Cultural Heritage},
+   editor = {Ioannides, Marinos and Magnenat-Thalmann, Nadia and Papagiannakis, George},
+   publisher = {Springer International Publishing},
+   address = {Cham},
+   pages = {129-158},
+   ISBN = {978-3-319-49607-8},
+   DOI = {10.1007/978-3-319-49607-8_5},
+   url = {https://doi.org/10.1007/978-3-319-49607-8_5},
+   year = {2017},
+   type = {Book Section}
+}
+
+@article{RN4,
+   author = {Ballard, Linda-May},
+   title = {Curating Intangible Cultural Heritage},
+   journal = {Anthropological Journal of European Cultures},
+   volume = {17},
+   number = {1},
+   pages = {74-95},
+   ISSN = {17552923, 17552931},
+   url = {http://www.jstor.org/stable/43235374},
+   year = {2008},
+   type = {Journal Article}
+}
+
+@book{RN20,
+   author = {Boiano, Stefania and Bowen, Jonathan and Gaia, Giuliano},
+   title = {Usability, Design and Content Issues of Mobile Apps for Cultural Heritage Promotion: The Malta Culture Guide Experience},
+   DOI = {10.14236/ewic/EVA2012.12},
+   year = {2012},
+   type = {Book}
+}
+
+@article{RN9,
+   author = {Cominelli, Francesca and Greffe, Xavier},
+   title = {Intangible cultural heritage: Safeguarding for creativity},
+   journal = {City, Culture and Society},
+   volume = {3},
+   number = {4},
+   pages = {245-250},
+   ISSN = {1877-9166},
+   DOI = {https://doi.org/10.1016/j.ccs.2012.10.003},
+   url = {https://www.sciencedirect.com/science/article/pii/S1877916612000537},
+   year = {2012},
+   type = {Journal Article}
+}
+
+@article{RN3,
+   author = {del Barrio, María José and Devesa, María and Herrero, Luis César},
+   title = {Evaluating intangible cultural heritage: The case of cultural festivals},
+   journal = {City, Culture and Society},
+   volume = {3},
+   number = {4},
+   pages = {235-244},
+   ISSN = {1877-9166},
+   DOI = {https://doi.org/10.1016/j.ccs.2012.09.002},
+   url = {https://www.sciencedirect.com/science/article/pii/S1877916612000501},
+   year = {2012},
+   type = {Journal Article}
+}
+
+@book{RN26,
+   author = {Dellheim, Charles},
+   title = {The face of the past: the preservation of the medieval inheritance in Victorian England},
+   publisher = {Cambridge University Press},
+   ISBN = {0521602769},
+   year = {2004},
+   type = {Book}
+}
+
+@article{RN13,
+   author = {DeSilvey, Caitlin},
+   title = {Making sense of transience: an anticipatory history},
+   journal = {cultural geographies},
+   volume = {19},
+   number = {1},
+   pages = {31-54},
+   DOI = {10.1177/1474474010397599},
+   url = {https://journals.sagepub.com/doi/abs/10.1177/1474474010397599},
+   year = {2012},
+   type = {Journal Article}
+}
+
+@article{RN19,
+   author = {Duvelle, Cécile},
+   title = {A decade of implementation of the Convention for the Safeguarding of the Intangible Cultural Heritage: Challenges and perspectives},
+   journal = {Ethnologies},
+   volume = {36},
+   number = {1-2},
+   pages = {27-46},
+   ISSN = {1481-5974},
+   DOI = {https://doi.org/10.7202/1037598ar},
+   url = {https://id.erudit.org/iderudit/1037598ar},
+   year = {2014},
+   type = {Journal Article}
+}
+
+@article{RN25,
+   author = {Erskine, Andrew},
+   title = {Culture and Power in Ptolemaic Egypt: the Museum and Library of Alexandria},
+   journal = {Greece and Rome},
+   volume = {42},
+   number = {1},
+   pages = {38-48},
+   ISSN = {0017-3835},
+   DOI = {10.1017/S0017383500025213},
+   url = {https://www.cambridge.org/core/article/culture-and-power-in-ptolemaic-egypt-the-museum-and-library-of-alexandria/0CDD0FE46E8E1BE454B9CF4867CFE84D},
+   year = {1995},
+   type = {Journal Article}
+}
+
+@article{RN22,
+   author = {Florek, Magdalena},
+   title = {No place like home: Perspectives on place attachment and impacts on city management},
+   journal = {Journal of Town & City Management},
+   volume = {1},
+   number = {4},
+   pages = {346-354},
+   year = {2011},
+   type = {Journal Article}
+}
+
+@article{RN23,
+   author = {George, E Wanda},
+   title = {Intangible cultural heritage, ownership, copyrights, and tourism},
+   journal = {International Journal of Culture, Tourism and Hospitality Research},
+   ISSN = {1750-6182},
+   year = {2010},
+   type = {Journal Article}
+}
+
+@article{RN15,
+   author = {Hannewijk, Bas and Vinella, Federica Lucia and Khan, Vassilis-Javed and Lykourentzou, Ioanna and Papangelis, Konstantinos and Masthoff, Judith},
+   title = {Capturing the City’s Heritage On-the-Go: Design Requirements for Mobile Crowdsourced Cultural Heritage},
+   journal = {Sustainability},
+   volume = {12},
+   number = {6},
+   pages = {2429},
+   ISSN = {2071-1050},
+   url = {https://www.mdpi.com/2071-1050/12/6/2429},
+   year = {2020},
+   type = {Journal Article}
+}
+
+@misc{RN16,
+   pages = {1-4},
+   month = {2013-11-06},
+   url = {https://hal.archives-ouvertes.fr/hal-01136931},
+   year = {2013},
+   type = {Conference Paper}
+}
+
+@article{RN8,
+   author = {Jerome, Pamela},
+   title = {The Values-Based Approach to Cultural-Heritage Preservation},
+   journal = {APT Bulletin: The Journal of Preservation Technology},
+   volume = {45},
+   number = {2/3},
+   pages = {3-8},
+   ISSN = {08488525},
+   url = {http://www.jstor.org/stable/23799521},
+   year = {2014},
+   type = {Journal Article}
+}
+
+@article{RN28,
+   author = {Kalay, Y and Kvan, Thomas and Affleck, Janice},
+   title = {New heritage},
+   journal = {New Media and Cultural Heritage; Routledge: London, UK; New York, NY, USA},
+   year = {2008},
+   type = {Journal Article}
+}
+
+@article{RN14,
+   author = {Kurin, Richard},
+   title = {Safeguarding Intangible Cultural Heritage in the 2003 UNESCO Convention: a critical appraisal},
+   journal = {Museum International},
+   volume = {56},
+   number = {1-2},
+   pages = {66-77},
+   ISSN = {1350-0775},
+   DOI = {10.1111/j.1350-0775.2004.00459.x},
+   url = {https://doi.org/10.1111/j.1350-0775.2004.00459.x},
+   year = {2004},
+   type = {Journal Article}
+}
+
+@article{RN2,
+   author = {Lenzerini, Federico},
+   title = {Intangible Cultural Heritage: The Living Culture of Peoples},
+   journal = {European Journal of International Law},
+   volume = {22},
+   number = {1},
+   pages = {101-120},
+   ISSN = {0938-5428},
+   DOI = {10.1093/ejil/chr006},
+   url = {https://doi.org/10.1093/ejil/chr006},
+   year = {2011},
+   type = {Journal Article}
+}
+
+@article{RN7,
+   author = {Lorusso, Salvatore and Cogo, Giampaolo Maria and Natali, Andrea},
+   title = {The Protection and Valorization of Cultural and Environmental Heritage in the Development Process of the Territory},
+   journal = {Conservation Science in Cultural Heritage},
+   volume = {16},
+   number = {1},
+   pages = {59-88},
+   DOI = {10.6092/issn.1973-9494/7165},
+   url = {https://conservation-science.unibo.it/article/view/7165},
+   year = {2016},
+   type = {Journal Article}
+}
+
+@article{RN17,
+   author = {Mitchenson, Donna},
+   title = {Safeguarding Intangible Cultural Heritage by Creating Meaningful Transmission Experiences},
+   journal = {International Journal of Heritage in the Digital Era},
+   volume = {4},
+   number = {1},
+   pages = {57-70},
+   DOI = {10.1260/2047-4970.4.1.57},
+   url = {https://journals.sagepub.com/doi/abs/10.1260/2047-4970.4.1.57},
+   year = {2015},
+   type = {Journal Article}
+}
+
+@article{RN21,
+   author = {Mountcastle, Amy},
+   title = {Safeguarding intangible cultural heritage and the inevitability of loss: a Tibetan example},
+   journal = {Studia ethnologica Croatica},
+   volume = {22},
+   number = {1},
+   pages = {339-359},
+   ISSN = {1330-3627},
+   year = {2010},
+   type = {Journal Article}
+}
+
+@article{RN27,
+   author = {Nations, United},
+   title = {International charter for the conservation and restoration of monuments and sites},
+   journal = {The Venice Charter},
+   year = {1964},
+   type = {Journal Article}
+}
+
+@article{RN1,
+   author = {Petronela, Tudorache},
+   title = {The Importance of the Intangible Cultural Heritage in the Economy},
+   journal = {Procedia Economics and Finance},
+   volume = {39},
+   pages = {731-736},
+   ISSN = {2212-5671},
+   DOI = {https://doi.org/10.1016/S2212-5671(16)30271-4},
+   url = {https://www.sciencedirect.com/science/article/pii/S2212567116302714},
+   year = {2016},
+   type = {Journal Article}
+}
+
+@article{RN10,
+   author = {Reguant-Aleix, Joan and Arbore, M. Rosaria and Bach-Faig, Anna and Serra-Majem, Lluís},
+   title = {Mediterranean Heritage: an intangible cultural heritage},
+   journal = {Public Health Nutrition},
+   volume = {12},
+   number = {9A},
+   pages = {1591-1594},
+   ISSN = {1368-9800},
+   DOI = {10.1017/S1368980009990413},
+   url = {https://www.cambridge.org/core/article/mediterranean-heritage-an-intangible-cultural-heritage/02E51A76C5DD6B16864A654F774A644D},
+   year = {2009},
+   type = {Journal Article}
+}
+
+@article{RN5,
+   author = {Rodzi, Nur Izzati Mohd and Zaki, Saniah Ahmad and Subli, Syed Mohd Hassan Syed},
+   title = {Between Tourism and Intangible Cultural Heritage},
+   journal = {Procedia - Social and Behavioral Sciences},
+   volume = {85},
+   pages = {411-420},
+   ISSN = {1877-0428},
+   DOI = {https://doi.org/10.1016/j.sbspro.2013.08.370},
+   url = {https://www.sciencedirect.com/science/article/pii/S187704281302497X},
+   year = {2013},
+   type = {Journal Article}
+}
+
+@article{RN24,
+   author = {Schein, Edgar H},
+   title = {What is culture},
+   journal = {Newbury Park, CA: Sage},
+   pages = {243-253},
+   year = {1991},
+   type = {Journal Article}
+}
+
+@article{RN12,
+   author = {Tan, Siow-Kian and Tan, Siow-Hooi and Kok, Yon-Sin and Choon, Shay-Wei},
+   title = {Sense of place and sustainability of intangible cultural heritage – The case of George Town and Melaka},
+   journal = {Tourism Management},
+   volume = {67},
+   pages = {376-387},
+   ISSN = {0261-5177},
+   DOI = {https://doi.org/10.1016/j.tourman.2018.02.012},
+   url = {https://www.sciencedirect.com/science/article/pii/S0261517718300360},
+   year = {2018},
+   type = {Journal Article}
+}
+
