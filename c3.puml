@@ -1,0 +1,165 @@
+@startuml
+!include <C4/C4_Container>
+
+' Style
+AddRelTag("response_tag", $lineStyle = DashedLine())
+AddRelTag("track_tag",$lineColor="darkcyan" ,$lineStyle = DashedLine())
+
+
+Person(user, "User", "The user of the system")
+
+System_Boundary(local, "Culturebook system") {
+    ' Client
+
+    System_Boundary(client_bound, "Mobile App") {
+        
+        System(activity, "Main Activity", "Kotlin, XML")
+
+        Container_Boundary(view_fragments, "View Fragments") {
+            Container(registerScreen, "Registration Screen", "Kotlin, XML")
+            Container(loginScreen, "Login Screen", "Kotlin, XML")
+            Container(nearbyScreen, "Nearby Screen", "Kotlin, XML")
+            Container(searchScreen, "Search Screen", "Kotlin, XML")
+            Container(addElementScreen, "Add Element Screen", "Kotlin, XML")
+            Container(elementDetailsScreen, "Element Details Screen", "Kotlin, XML")
+            Container(contributionDetailsScreen, "Contribution Details Screen", "Kotlin, XML")
+            Container(accountScreen, "Account Screen", "Kotlin, XML")
+        }
+
+        Container_Boundary(view_model, "View Models") {
+            Container(authVM, "Authentication View Model", "Kotlin")
+            Container(nearbyVM, "Nearby View Model", "Kotlin")
+            Container(elementVM, "Element Details View Model", "Kotlin")
+            Container(contributionVM, "Contribution Details View Model", "Kotlin")
+            Container(addVM, "Add an element View Model", "Kotlin")
+            Container(accountVM, "Account View Model", "Kotlin")
+        }
+
+        Container_Boundary(data_access, "Data Layer"){
+            Container(api_interface, "API interface", "Retrofit")
+            Container(track_interface, "Tracking interface", "Firebase")
+            Container(authRepo, "Authentication Repository", "Kotlin")
+            Container(nearbyRepo, "Nearby Repository", "Kotlin")
+            Container(elementRepo, "Element Details Repository", "Kotlin")
+            Container(contributionRepo, "Contribution Details Repository", "Kotlin")
+            Container(addRepo, "Add an element Repository", "Kotlin")
+            Container(accountRepo, "Account Repository", "Kotlin")
+        }
+
+        ' Relations
+        BiRel_U(track_interface, authRepo, " ",$tags="track_tag")
+        BiRel_U(track_interface, nearbyRepo, " ",$tags="track_tag")
+        BiRel_U(track_interface, elementRepo, " ",$tags="track_tag")
+        BiRel_U(track_interface, contributionRepo, " ",$tags="track_tag")
+        BiRel_U(track_interface, addRepo, " ",$tags="track_tag")
+        BiRel_U(track_interface, accountRepo, " ",$tags="track_tag")
+        
+        BiRel_U(api_interface, authRepo, " ", $tags="response_tag")
+        BiRel_U(api_interface, nearbyRepo, " ", $tags="response_tag")
+        BiRel_U(api_interface, elementRepo, " ", $tags="response_tag")
+        BiRel_U(api_interface, contributionRepo, " ", $tags="response_tag")
+        BiRel_U(api_interface, addRepo, " ", $tags="response_tag")
+        BiRel_U(api_interface, accountRepo, " ", $tags="response_tag")
+
+        BiRel_D(authVM, authRepo, " ")
+        BiRel_D(nearbyVM, nearbyRepo, " ")
+        BiRel_D(elementVM, elementRepo, " ")
+        BiRel_D(contributionVM, contributionRepo, " ")
+        BiRel_D(addVM, addRepo, " ")
+        BiRel_D(accountVM, accountRepo, " ")
+
+        BiRel_D(registerScreen, authVM, " ")
+        BiRel_D(loginScreen, authVM, " ")
+        BiRel_D(nearbyScreen, nearbyVM, " ")
+        BiRel_D(elementDetailsScreen, elementVM, " ")
+        BiRel_D(contributionDetailsScreen, contributionVM, " ")
+        BiRel_D(addElementScreen, addVM, " ")
+        BiRel_D(accountScreen, accountVM, " ")
+
+        Rel_D(activity, view_fragments, " ")
+    }
+
+    ' Backend
+    System_Boundary(api_bound, "API") {
+        System_Boundary(api_gw, "API Gateway") {
+            ContainerDb(service_reg, "Service Registry", "Responsible for storing the status and information of each service")
+            Container(load_balance, "Load Balancer", "Responsible for distributing the api calls and handling the responses")
+            Container(logger, "Logger", "Responsible for tracking each session")
+
+            ' Relations
+            BiRel(service_reg, load_balance, " ")
+            BiRel_R(load_balance, logger, " ")
+        }
+        
+        
+        Container_Boundary(auth, "Authentication Microservice") {
+            Container(auth_model, "Authentication Data Models", "Kotlin")
+            Container(auth_logic, "Authentication Business Logic", "Kotlin")
+            Rel_U(auth_model, auth_logic, " ")
+        }
+
+        Container_Boundary(nearby, "Nearby Microservice") {
+            Container(nearby_model, "Nearby Data Models", "Kotlin")
+            Container(nearby_logic, "Nearby Business Logic", "Kotlin")
+            Rel_U(nearby_model, nearby_logic, " ")
+        }
+
+        Container_Boundary(element, "Elements Microservice") {
+            Container(element_model, "Elements Models", "Kotlin")
+            Container(element_logic, "Elemenets Business Logic", "Kotlin")
+            Rel_U(element_model, element_logic, " ")
+        }
+
+        Container_Boundary(contribution, "Contributions Microservice") {
+            Container(contr_model, "Contribution Models", "Kotlin")
+            Container(contr_logic, "Contribution Business Logic", "Kotlin")
+            Rel_U(contr_model, contr_logic, " ")
+        }
+
+        Container_Boundary(add_element, "Add element Microservice") {
+            Container(add_model, "Add element Models", "Kotlin")
+            Container(add_logic, "Add element Business Logic", "Kotlin")
+            Rel_U(add_model, add_logic, " ")
+        }
+
+        Container_Boundary(account, "Account Microservice") {
+            Container(account_model, "Account Models", "Kotlin")
+            Container(account_logic, "Account Business Logic", "Kotlin")
+            Rel_U(account_model, account_logic, " ")
+        }
+
+        ContainerDb(db, "Data access Microservice", "Handles all read/write operations")
+        
+        ' Layout
+
+        Lay_U(load_balance, service_reg)
+
+        ' Relations
+
+        BiRel_D(load_balance, auth_logic, " ")
+        BiRel_D(load_balance, nearby_logic, " ")
+        BiRel_D(load_balance, element_logic, " ")
+        BiRel_D(load_balance, contr_logic, " ")
+        BiRel_D(load_balance, add_logic, " ")
+        BiRel_D(load_balance, account_logic, " ")
+
+        BiRel_D(db, auth_logic, " ", $tags="response_tag")
+        BiRel_D(db, nearby_logic, " ", $tags="response_tag")
+        BiRel_D(db, element_logic, " ", $tags="response_tag")
+        BiRel_D(db, contr_logic, " ", $tags="response_tag")
+        BiRel_D(db, add_logic, " ", $tags="response_tag")
+        BiRel_D(db, account_logic, " ", $tags="response_tag")
+    }
+}
+
+' Layout & Styles
+Lay_U(client_bound, user)
+Lay_U(api_bound, client_bound)
+
+' Api Relations
+Rel_D(api_interface, load_balance, " ")
+Rel_U(load_balance, api_interface, " ", $tags="response_tag")
+
+' User relations
+BiRel(user, activity, " ")
+@enduml
