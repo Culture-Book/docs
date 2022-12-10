@@ -30,13 +30,13 @@ System_Boundary(local, "Culturebook system") {
     ' Backend
     System_Boundary(api_bound, "API") {
         System(api_gw, "API Gateway", "Ktor")
-        Container(auth, "Authentication Microservice", "Handles client and inter-process authentication ")
-        Container(nearby, "Nearby Microservice", "Handles the nearby feature's business logic")
-        Container(element, "Elements Microservice", "Handles the element details feature's business logic")
-        Container(contribution, "Contributions Microservice", "Handles the contribution details feature's business logic")
-        Container(add_element, "Add element Microservice", "Handles the add element feature's business logic")
-        Container(account, "Account Microservice", "Handles the account feature's business logic")
-        ContainerDb(db, "Data access Microservice", "Handles all read/write operations")
+        Container(auth, "Authentication Module", "Handles client and inter-process authentication ")
+        Container(nearby, "Nearby Module", "Handles the nearby feature's business logic")
+        Container(element, "Elements Module", "Handles the element details feature's business logic")
+        Container(contribution, "Contributions Module", "Handles the contribution details feature's business logic")
+        Container(add_element, "Add element Module", "Handles the add element feature's business logic")
+        Container(account, "Account Module", "Handles the account feature's business logic")
+        ContainerDb(db, "Data access Module", "Handles all read/write operations")
         
         ' Relations
 

@@ -29,6 +29,7 @@ Rel(api,firebase, "Json")
 ' Client relations
 Rel(client,firebase, "Json")
 BiRel(client, api, "Uses", "Retrofit")
+
 ' User relations
 BiRel(user, client, "Interacts")
 Rel(user, google, "Approves")
