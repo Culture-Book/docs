@@ -1,0 +1,62 @@
+@startuml authentication_reg
+title Registration Use Case
+
+boundary client
+participant Proxy as proxy
+participant Logger as logger
+participant "Authentication Service" as auth
+queue "Email delivery service" as email
+database Database as db
+
+client -> proxy : POST "/register"
+activate client
+    activate proxy
+
+    group track call
+        proxy -> logger : get track ID
+        activate logger
+            logger -> logger : save track ID
+            logger --> proxy : track ID
+        deactivate logger
+    end
+
+    proxy -> proxy : check api version
+    proxy -> auth
+    activate auth
+        auth -> auth : decode body with private key
+        auth -> db : Check if email exists
+        alt email exists
+            activate db
+                db --> auth : Email exists
+            deactivate db
+            auth --> proxy : error (email exists)
+    deactivate auth
+            proxy -> logger : save outcome
+            proxy --> client : error (email exists)
+    deactivate proxy
+            else email doesn't exist
+                    db --> auth : Email doesn't exist
+                deactivate db
+                
+                activate auth
+                auth -> auth : Hash password and email
+                auth -> db : Save password and email
+
+                activate db
+                    db --> auth : save successful
+                deactivate db
+
+                auth -> email : send verification email 
+                auth -> auth : Generate access & refresh JWT
+                auth --> proxy : Return access & refresh JWT
+
+                deactivate auth
+                activate proxy
+                    proxy -> logger : save outcome
+                    proxy --> client : Return JWTs
+                deactivate proxy
+            end
+        deactivate auth
+    deactivate proxy
+deactivate client
+@enduml

@@ -1,0 +1,48 @@
+@startuml authentication_log
+title Login Use Case
+
+boundary client
+participant Proxy as proxy
+participant Logger as logger
+participant "Authentication Service" as auth
+database Database as db
+
+client -> proxy : POST "/login"
+activate client
+    activate proxy
+        group track call
+            proxy -> logger : get track ID
+            activate logger
+                logger -> logger : save track ID
+                logger --> proxy : track ID
+            deactivate logger
+        end
+
+        proxy -> proxy : check api version
+        proxy -> auth
+        activate auth
+            auth -> auth : Decode password and email
+            auth -> db : check if email exists
+            alt email/password doesn't exist
+                activate db
+                db --> auth : email/password doesn't exist
+                auth --> proxy : generic error
+        deactivate auth
+                proxy -> logger : save outcome
+                proxy --> client : generic error
+    deactivate proxy
+            else email and password exist
+                db --> auth : Email and password exist
+                activate auth
+                auth -> auth : Generate access & refresh JWT
+                auth --> proxy : Return access & refresh JWT
+                deactivate auth
+                activate proxy
+                    proxy -> logger : save outcome
+                    proxy --> client : Return JWTs
+                deactivate proxy
+            end
+        deactivate auth
+    deactivate proxy
+deactivate client
+@enduml

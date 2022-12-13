@@ -1,0 +1,17 @@
+@startuml
+boundary client
+participant Proxy as proxy
+participant "Authentication Service" as auth
+database Database as db
+title RSA encryption endpoint
+
+activate proxy
+client -> proxy : GET "/oauth"
+activate proxy
+proxy -> auth : get public RSA key
+activate auth
+auth --> proxy : public RSA key
+deactivate auth
+proxy --> client : public RSA key
+deactivate proxy
+@enduml
