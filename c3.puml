@@ -1,5 +1,6 @@
 @startuml
 !include <C4/C4_Container>
+skinparam linetype ortho
 
 ' Style
 AddRelTag("response_tag", $lineStyle = DashedLine())

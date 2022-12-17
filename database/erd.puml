@@ -1,0 +1,191 @@
+@startuml
+    hide circle
+    skinparam linetype ortho
+
+    entity BlockedComment {
+        * user_id : UUID
+        * comment_id : UUID
+    }
+
+    entity BlockedElement {
+        * user_id : UUID
+        * element_id : UUID
+    }
+
+    entity BlockedContribution {
+        * user_id : UUID
+        * contribution_id : UUID
+    }
+
+    entity BlockedCulture {
+        * user_id : UUID
+        * culture_id : UUID
+    }
+
+    entity AddedComment {
+        * user_id : UUID
+        * comment_id : UUID
+    }
+
+    entity AddedElement {
+        * user_id : UUID
+        * element_id : UUID
+    }
+
+    entity AddedContribution {
+        * user_id : UUID
+        * contribution_id : UUID
+    }
+
+    entity AddedCulture {
+        * user_id : UUID
+        * culture_id : UUID
+    }
+
+    entity User {
+        * user_id : UUID
+        --
+        profile_pic_uri : TEXT 
+        display_name : TEXT
+        password : TEXT
+        * email : TEXT
+        * tos_accept : DATE
+        * privacy_accept : DATE
+        * verification_status : INTEGER (0 for not verified, 1 for verified, 2 for pending)
+        * registration_status : INTEGER <<FK>>
+    }
+    
+    entity Reg_status {
+        * reg_status_id : INTEGER
+        --
+        missing_email : BOOLEAN
+        missing_password : BOOLEAN
+    }
+
+    entity Element {
+        * element_id : UUID
+        --
+        event_date : DATE
+        event_location : TEXT
+        * latitude : DOUBLE
+        * longitude : DOUBLE
+        * created_at : DATE
+        * title : TEXT
+        * description : TEXT
+        * type : INTEGER (0 - food, 1 - music, 2 - story, 3 - PoI, 4 - event)
+        * reaction_amount : INTEGER
+        * comment_amount : INTEGER
+        * culture : UUID <<FK>>
+    }
+
+    entity Contribution {
+        * contribution_id : UUID
+        --
+        event_date : DATE
+        event_location : TEXT
+        * latitude : DOUBLE
+        * longitude : DOUBLE
+        * created_at : DATE
+        * title : TEXT
+        * description : TEXT
+        * type : INTEGER (0 - food, 1 - music, 2 - story, 3 - PoI, 4 - event)
+        * reaction_amount : INTEGER
+        * comment_amount : INTEGER
+        * culture : UUID <<FK>>
+        * culture_element : UUID <<FK>>
+        * location : UUID <<FK>>
+    }
+
+    entity Culture {
+        * culture_id : UUID
+        --
+        * culture_name : TEXT
+    }
+
+    entity Element_Media {
+        * element_id : <<FK, PK>>
+        * media_id : <<FK, PK>>
+    }
+
+    entity Contribution_Media {
+        * contribution_id : <<FK, PK>>
+        * media_id : <<FK, PK>>
+    }
+
+    entity Element_Comments {
+        * element_id : <<FK, PK>>
+        * comment_id : <<FK, PK>>
+    }
+
+    entity Contribution_Comments {
+        * contribution_id : <<FK, PK>>
+        * comment_id : <<FK, PK>>
+    }
+
+    entity Element_Reactions {
+        * element_id : <<FK, PK>>
+        * reaction_id : <<FK, PK>>
+    }
+
+    entity Contribution_Reactions {
+        * contribution_id : <<FK, PK>>
+        * reaction_id : <<FK, PK>>
+    }
+
+    entity Media {
+        * media_id : UUID
+        --
+        * uri : TEXT
+    }
+
+    entity Comment {
+        * comment_id : UUID
+        * comment : TEXT
+    }
+
+    entity Reaction {
+        * reaction_id : UUID
+        * reaction : TEXT
+    }
+
+    ' Relations
+    ' Blocked content, A user can have many blocked content, but a blocked content can only have a single user.
+    BlockedComment ||--o{ User
+    Comment }o--|| BlockedComment
+    BlockedElement ||--o{ User
+    Element }o--|| BlockedElement
+    BlockedCulture ||--o{ User
+    Culture }o--|| BlockedCulture
+    BlockedContribution ||--o{ User
+    Contribution }o--|| BlockedContribution
+
+    AddedComment ||--o{ User
+    Comment }o--|| AddedComment
+    AddedElement ||--o{ User
+    Element }o--|| AddedElement
+    AddedCulture ||--o{ User
+    Culture }o--|| AddedCulture
+    AddedContribution ||--o{ User
+    Contribution }o--|| AddedContribution
+    Reg_status ||--|| User
+
+    ' Element contributions
+    Contribution }o--|| Element
+
+    Element }o--|| Culture
+    Element }o--|| Element_Media
+    Element }o--|| Element_Comments
+    Element }o--|| Element_Reactions
+
+    Media }o--|| Element_Media
+    Comment }o--|| Element_Comments
+    Reaction }o--|| Element_Reactions
+
+    Contribution }o--|| Contribution_Media
+    Contribution }o--|| Contribution_Comments
+    Contribution }o--|| Contribution_Reactions
+
+    Media }o--|| Contribution_Media
+    Comment }o--|| Contribution_Comments
+    Reaction }o--|| Contribution_Reactions
+@enduml
