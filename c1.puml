@@ -13,9 +13,8 @@ System_Boundary(local, "Culturebook system") {
 }
 
 ' External systems
-System_Ext(google, "Google Cloud Services", "Google sign in")
+System_Ext(google, "Google Cloud Services", "Google sign in/maps")
 System_Ext(firebase, "Firebase", "Firebase configuration and analytics")
-System_Ext(rekognition, "AWS Rekognition", "Content moderation platform")
 
 ' Layout
 
@@ -23,12 +22,11 @@ Lay_U(client, user)
 Lay_U(api, client)
 
 ' Api Relations
-Rel(api, rekognition, "Media")
-Rel(api, google, "JWT")
-Rel(api,firebase, "Json")
+' Rel(api, rekognition, "Media")
+Rel(client, google, "JWT")
+Rel(client, firebase, "Json")
 
 ' Client relations
-Rel(client,firebase, "Json")
 BiRel(client, api, "Uses", "Retrofit")
 
 ' User relations

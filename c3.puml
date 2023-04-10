@@ -91,15 +91,6 @@ System_Boundary(local, "Culturebook system") {
 
     ' Backend
     System_Boundary(api_bound, "API") {
-        System_Boundary(api_gw, "API Gateway") {
-            Container(load_balance, "Proxy", "Responsible for distributing the api calls and handling the responses")
-            Container(logger, "Logger", "Responsible for tracking each session")
-
-            ' Relations
-            BiRel_R(load_balance, logger, " ")
-        }
-        
-        
         Container_Boundary(auth, "Authentication Module") {
             Container(auth_model, "Authentication Repository", "Kotlin")
             Container(auth_logic, "Authentication Business Logic", "Kotlin")
@@ -140,12 +131,12 @@ System_Boundary(local, "Culturebook system") {
         
         ' Relations
 
-        BiRel_D(load_balance, auth_logic, " ")
-        BiRel_D(load_balance, nearby_logic, " ")
-        BiRel_D(load_balance, element_logic, " ")
-        BiRel_D(load_balance, contr_logic, " ")
-        BiRel_D(load_balance, add_logic, " ")
-        BiRel_D(load_balance, account_logic, " ")
+        BiRel_D(api_interface, auth_logic, " ")
+        BiRel_D(api_interface, nearby_logic, " ")
+        BiRel_D(api_interface, element_logic, " ")
+        BiRel_D(api_interface, contr_logic, " ")
+        BiRel_D(api_interface, add_logic, " ")
+        BiRel_D(api_interface, account_logic, " ")
 
         BiRel_U(db, auth_model, " ", $tags="response_tag")
         BiRel_U(db, nearby_model, " ", $tags="response_tag")
@@ -159,10 +150,6 @@ System_Boundary(local, "Culturebook system") {
 ' Layout & Styles
 Lay_U(client_bound, user)
 Lay_U(api_bound, client_bound)
-
-' Api Relations
-Rel_D(api_interface, load_balance, " ")
-Rel_U(load_balance, api_interface, " ", $tags="response_tag")
 
 ' User relations
 BiRel(user, activity, " ")

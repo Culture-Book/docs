@@ -11,7 +11,7 @@ System_Boundary(local, "Culturebook system") {
     ' Client
 
     System_Boundary(client_bound, "Mobile App") {
-        System(view_layer, "View Fragments", "Kotlin, XML")
+        System(view_layer, "Composables", "Kotlin")
         System(view_models, "View Models", "Kotlin")
         System(data_layer, "Data Layer", "Kotlin")
 
@@ -30,7 +30,6 @@ System_Boundary(local, "Culturebook system") {
 
     ' Backend
     System_Boundary(api_bound, "API") {
-        System(api_gw, "API Gateway", "Ktor")
         Container(auth, "Authentication Module", "Handles client and inter-process authentication ")
         Container(nearby, "Nearby Module", "Handles the nearby feature's business logic")
         Container(element, "Elements Module", "Handles the element details feature's business logic")
@@ -41,12 +40,12 @@ System_Boundary(local, "Culturebook system") {
         
         ' Relations
 
-        BiRel_D(api_gw, auth, "Uses")
-        BiRel_D(api_gw, nearby, "Uses")
-        BiRel_D(api_gw, element, "Uses")
-        BiRel_D(api_gw, contribution, "Uses")
-        BiRel_D(api_gw, add_element, "Uses")
-        BiRel_D(api_gw, account, "Uses")
+        BiRel_D(data_layer, auth, "Uses")
+        BiRel_D(data_layer, nearby, "Uses")
+        BiRel_D(data_layer, element, "Uses")
+        BiRel_D(data_layer, contribution, "Uses")
+        BiRel_D(data_layer, add_element, "Uses")
+        BiRel_D(data_layer, account, "Uses")
 
         BiRel_U(db, auth, "Uses", $tags="response_tag")
         BiRel_U(db, nearby, "Uses", $tags="response_tag")
@@ -62,11 +61,6 @@ System_Ext(external, "External Systems")
 
 ' Layout & Styles
 Lay_U(client_bound, user)
-Lay_U(api_gw, client_bound)
-
-' Api Relations
-Rel_D(data_layer, api_gw, "Remote API calls")
-Rel_U(api_gw, data_layer, "API response", $tags="response_tag")
 
 ' User relations
 BiRel(user, view_layer, "Uses")
